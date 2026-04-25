@@ -61,5 +61,20 @@ cursor:pointer;
 <p>Powiadomienia przed live butikowym</p>
 <button>Włącz powiadomienia</button>
 </div>
+  <script src="config.js"></script>
+<script>
+if (LIVE_CONFIG.isLive) {
+  document.querySelector("h2").innerText = "🔴 LIVE JUŻ TRWA";
+  document.querySelector("p").innerText = "Dołącz teraz do transmisji";
+  document.querySelector("button").innerText = "DOŁĄCZ TERAZ";
+
+  document.querySelector("button").onclick = function () {
+    window.location.href = LIVE_CONFIG.liveUrl;
+  };
+} else {
+  document.querySelector("p").innerText =
+    "Następny live: " + LIVE_CONFIG.nextLiveText;
+}
+</script>
 </body>
 </html>
