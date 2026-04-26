@@ -1,5 +1,5 @@
 const LIVE_CONFIG = {
-  isLive: false,
+  isLive: true,
   liveUrl: "https://facebook.com/",
   nextLiveText: "Czwartek 20:00"
 };
