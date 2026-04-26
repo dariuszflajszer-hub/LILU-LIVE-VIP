@@ -6,75 +6,123 @@
 <title>LILU VIP CLUB</title>
 
 <style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
 body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#f5f5f5;
+font-family:Arial,Helvetica,sans-serif;
+background:linear-gradient(180deg,#fff7fa,#ffeef4);
+height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-height:100vh;
+padding:20px;
 }
 
-.box{
-background:white;
-padding:40px;
+.app{
+width:100%;
+max-width:420px;
+background:#ffffff;
 border-radius:28px;
+padding:28px;
 box-shadow:0 20px 50px rgba(0,0,0,.12);
 text-align:center;
-width:360px;
+position:relative;
 }
 
-img{
-width:170px;
-margin-bottom:20px;
+.bell{
+position:absolute;
+top:18px;
+right:18px;
+font-size:22px;
+cursor:pointer;
+}
+
+.logo{
+width:180px;
+margin:10px auto 18px;
+display:block;
 }
 
 h1{
-color:#8b0f2d;
-margin:0 0 10px;
-font-size:42px;
+font-size:34px;
+color:#8d1131;
+margin-bottom:14px;
 }
 
-p{
-color:#555;
-font-size:20px;
-margin-bottom:30px;
+.status{
+font-size:22px;
+font-weight:bold;
+margin-bottom:12px;
+color:#222;
+}
+
+.info{
+font-size:18px;
+color:#666;
+margin-bottom:28px;
+line-height:1.4;
 }
 
 button{
-background:#8b0f2d;
-color:white;
+width:100%;
 border:none;
-padding:18px 30px;
+padding:18px;
+border-radius:16px;
 font-size:20px;
-border-radius:14px;
+font-weight:bold;
 cursor:pointer;
+background:#8d1131;
+color:white;
+box-shadow:0 10px 25px rgba(141,17,49,.25);
+}
+
+button:hover{
+opacity:.95;
 }
 </style>
 </head>
 
 <body>
-<div class="box">
-<img src="serce-3.jpg">
-<h1>LILU VIP CLUB</h1>
-<p>Powiadomienia przed live butikowym</p>
-<button>Włącz powiadomienia</button>
-</div>
-  <script src="config.js"></script>
-<script>
-if (LIVE_CONFIG.isLive) {
-  document.querySelector("h1").innerText = "🔴 LIVE JUŻ TRWA";
-  document.querySelector("p").innerText = "Dołącz teraz do transmisji";
-  document.querySelector("button").innerText = "DOŁĄCZ TERAZ";
 
-  document.querySelector("button").onclick = function () {
-    window.location.href = LIVE_CONFIG.liveUrl;
-  };
+<div class="app">
+<div class="bell">🔔</div>
+
+<img src="serce-3.jpg" class="logo">
+
+<h1>LILU VIP CLUB</h1>
+
+<div class="status" id="status"></div>
+<div class="info" id="info"></div>
+
+<button id="mainBtn"></button>
+</div>
+
+<script src="config.js"></script>
+
+<script>
+const statusEl = document.getElementById("status");
+const infoEl = document.getElementById("info");
+const btn = document.getElementById("mainBtn");
+
+if (LIVE_CONFIG.isLive === true) {
+statusEl.innerText = "🔴 LIVE JUŻ TRWA";
+infoEl.innerText = "Dołącz teraz do transmisji na żywo";
+btn.innerText = "DOŁĄCZ TERAZ";
+
+btn.onclick = () => {
+window.location.href = LIVE_CONFIG.liveUrl;
+};
+
 } else {
-  document.querySelector("p").innerText =
-    "Następny live: " + LIVE_CONFIG.nextLiveText;
+statusEl.innerText = "⏰ NAJBLIŻSZY LIVE";
+infoEl.innerText = LIVE_CONFIG.nextLiveText;
+btn.innerText = "WŁĄCZ POWIADOMIENIA";
+
+btn.onclick = () => {
+alert("Powiadomienia będą dostępne w kolejnym etapie.");
+};
 }
 </script>
+
 </body>
 </html>
