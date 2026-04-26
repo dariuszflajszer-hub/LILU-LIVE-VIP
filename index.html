@@ -1,200 +1,156 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LILU VIP CLUB</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LILU VIP CLUB</title>
 
-  <link rel="manifest" href="manifest.webmanifest?v=3">
-  <link rel="icon" href="lilu-icon-192.png">
-  <link rel="apple-touch-icon" href="lilu-icon-192.png">
+<link rel="manifest" href="manifest.webmanifest?v=3">
+<link rel="icon" href="lilu-icon-192.png">
 
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-
-    body {
-      min-height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      padding:18px;
-      font-family:Arial, Helvetica, sans-serif;
-      background:radial-gradient(circle at top,#fff,#fff3f7 38%,#eadde2 100%);
-      color:#23151a;
-    }
-
-    .app {
-      width:100%;
-      max-width:430px;
-      min-height:90vh;
-      position:relative;
-      text-align:center;
-      border-radius:36px;
-      padding:34px 24px 24px;
-      background:linear-gradient(180deg,#ffffff,#fff7fa);
-      box-shadow:0 30px 70px rgba(97,20,43,.22);
-      overflow:hidden;
-    }
-
-    .bell {
-      position:absolute;
-      top:22px;
-      right:22px;
-      width:52px;
-      height:52px;
-      border-radius:50%;
-      background:#fff;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      font-size:24px;
-      box-shadow:0 12px 28px rgba(141,17,49,.16);
-    }
-
-    .logo {
-      width:210px;
-      max-width:72%;
-      margin:38px auto 28px;
-      display:block;
-      filter:drop-shadow(0 18px 24px rgba(141,17,49,.28));
-    }
-
-    h1 {
-      color:#84112d;
-      font-size:42px;
-      line-height:1.05;
-      letter-spacing:.12em;
-      margin-bottom:22px;
-      font-weight:900;
-    }
-
-    .divider {
-      display:flex;
-      align-items:center;
-      gap:14px;
-      margin:0 auto 28px;
-      width:76%;
-      color:#c9a35c;
-      font-size:22px;
-    }
-
-    .divider:before,
-    .divider:after {
-      content:"";
-      flex:1;
-      height:1px;
-      background:linear-gradient(90deg,transparent,#d8b56d,transparent);
-    }
-
-    .card {
-      background:rgba(255,255,255,.82);
-      border-radius:30px;
-      padding:30px 22px;
-      box-shadow:0 18px 42px rgba(97,20,43,.13);
-      border:1px solid rgba(255,255,255,.9);
-      margin-bottom:26px;
-    }
-
-    .status {
-      font-size:31px;
-      font-weight:900;
-      letter-spacing:.04em;
-      margin-bottom:16px;
-      color:#151515;
-    }
-
-    .live-dot {
-      display:inline-block;
-      width:22px;
-      height:22px;
-      border-radius:50%;
-      background:#e52b45;
-      margin-right:10px;
-      box-shadow:0 0 18px rgba(229,43,69,.45);
-      vertical-align:middle;
-    }
-
-    .info {
-      font-size:25px;
-      color:#51464a;
-      line-height:1.3;
-    }
-
-    button {
-      width:100%;
-      border:none;
-      border-radius:26px;
-      padding:23px 20px;
-      background:linear-gradient(180deg,#a8143c,#62091f);
-      color:#fff;
-      font-size:27px;
-      font-weight:900;
-      letter-spacing:.04em;
-      cursor:pointer;
-      box-shadow:0 18px 36px rgba(141,17,49,.36);
-    }
-
-    .note {
-      margin-top:22px;
-      font-size:14px;
-      color:#806e74;
-      line-height:1.45;
-    }
-
-    .build {
-      margin-top:18px;
-      font-size:11px;
-      color:#c8b8be;
-      letter-spacing:.08em;
-    }
-  </style>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:14px;
+font-family:Arial,Helvetica,sans-serif;
+background:linear-gradient(180deg,#fff7fa,#eadde2);
+}
+.app{
+width:100%;
+max-width:390px;
+height:92vh;
+max-height:780px;
+border-radius:34px;
+background:linear-gradient(180deg,#fff,#fff5f8);
+box-shadow:0 24px 60px rgba(98,9,31,.22);
+padding:22px 22px 20px;
+text-align:center;
+position:relative;
+display:flex;
+flex-direction:column;
+}
+.bell{
+position:absolute;
+top:18px;
+right:18px;
+width:46px;
+height:46px;
+border-radius:50%;
+background:#fff;
+box-shadow:0 10px 24px rgba(98,9,31,.14);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:22px;
+}
+.logo{
+width:165px;
+margin:22px auto 18px;
+filter:drop-shadow(0 14px 18px rgba(141,17,49,.25));
+}
+h1{
+font-size:34px;
+letter-spacing:.1em;
+color:#84112d;
+font-weight:900;
+line-height:1.05;
+margin-bottom:18px;
+}
+.card{
+background:rgba(255,255,255,.86);
+border-radius:26px;
+padding:22px 18px;
+box-shadow:0 14px 34px rgba(98,9,31,.12);
+margin-bottom:22px;
+}
+.status{
+font-size:27px;
+font-weight:900;
+letter-spacing:.03em;
+margin-bottom:12px;
+color:#111;
+}
+.dot{
+display:inline-block;
+width:20px;
+height:20px;
+border-radius:50%;
+background:#e52b45;
+margin-right:10px;
+vertical-align:middle;
+}
+.info{
+font-size:21px;
+line-height:1.3;
+color:#51464a;
+}
+button{
+margin-top:auto;
+width:100%;
+border:none;
+border-radius:24px;
+padding:21px 18px;
+background:linear-gradient(180deg,#b01543,#61091f);
+color:#fff;
+font-size:25px;
+font-weight:900;
+letter-spacing:.04em;
+box-shadow:0 16px 34px rgba(141,17,49,.35);
+}
+.note{
+font-size:13px;
+color:#806e74;
+margin-top:15px;
+}
+.build{
+font-size:10px;
+color:#c8b8be;
+margin-top:8px;
+}
+</style>
 </head>
 
 <body>
-  <main class="app">
-    <div class="bell">🔔</div>
+<main class="app">
+<div class="bell">🔔</div>
 
-    <img src="serce-3.jpg" class="logo" alt="LILU LIVE">
+<img src="serce-3.jpg" class="logo" alt="LILU LIVE">
 
-    <h1>LILU VIP CLUB</h1>
+<h1>LILU VIP CLUB</h1>
 
-    <div class="divider">♡</div>
+<section class="card">
+<div class="status" id="status"></div>
+<div class="info" id="info"></div>
+</section>
 
-    <section class="card">
-      <div class="status" id="status"></div>
-      <div class="info" id="info"></div>
-    </section>
+<button id="mainBtn"></button>
 
-    <button id="mainBtn"></button>
+<div class="note">Bez spamu. Tylko informacje o live.</div>
+<div class="build">BUILD LUX 002</div>
+</main>
 
-    <div class="note">Bez spamu. Tylko informacje o live.</div>
-    <div class="build">BUILD PREMIUM 001</div>
-  </main>
+<script src="config.js?v=3"></script>
 
-  <script src="config.js?v=3"></script>
+<script>
+const statusEl = document.getElementById("status");
+const infoEl = document.getElementById("info");
+const btn = document.getElementById("mainBtn");
 
-  <script>
-    const statusEl = document.getElementById("status");
-    const infoEl = document.getElementById("info");
-    const btn = document.getElementById("mainBtn");
-
-    if (LIVE_CONFIG.isLive === true) {
-      statusEl.innerHTML = '<span class="live-dot"></span>LIVE JUŻ TRWA';
-      infoEl.innerText = "Dołącz teraz do transmisji na żywo";
-      btn.innerText = "DOŁĄCZ TERAZ";
-
-      btn.onclick = () => {
-        window.location.href = LIVE_CONFIG.liveUrl;
-      };
-    } else {
-      statusEl.innerText = "⏰ NAJBLIŻSZY LIVE";
-      infoEl.innerText = LIVE_CONFIG.nextLiveText;
-      btn.innerText = "WŁĄCZ POWIADOMIENIA";
-
-      btn.onclick = () => {
-        alert("Powiadomienia będą dostępne w kolejnym etapie.");
-      };
-    }
-  </script>
+if (LIVE_CONFIG.isLive === true) {
+statusEl.innerHTML = '<span class="dot"></span>LIVE JUŻ TRWA';
+infoEl.innerText = "Dołącz teraz do transmisji na żywo";
+btn.innerText = "DOŁĄCZ TERAZ";
+btn.onclick = () => { window.location.href = LIVE_CONFIG.liveUrl; };
+} else {
+statusEl.innerText = "⏰ NAJBLIŻSZY LIVE";
+infoEl.innerText = LIVE_CONFIG.nextLiveText;
+btn.innerText = "WŁĄCZ POWIADOMIENIA";
+btn.onclick = () => { alert("Powiadomienia będą dostępne w kolejnym etapie."); };
+}
+</script>
 </body>
 </html>
