@@ -1,0 +1,20 @@
+{
+  "name": "LILU VIP CLUB",
+  "short_name": "LILU",
+  "start_url": "/LILU-LIVE-VIP/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#8d1131",
+  "icons": [
+    {
+      "src": "serce-3.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "serce-3.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
