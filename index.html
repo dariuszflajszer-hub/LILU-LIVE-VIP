@@ -43,15 +43,17 @@ h1{font-size:clamp(33px,9vw,46px);line-height:1.05;letter-spacing:.12em;font-wei
   <div class="vip"><span>♙</span> Tylko dla członków VIP</div>
   <div class="small-divider">◇</div>
   <div class="note">Bez spamu. Tylko informacje o live.</div>
-  <div class="build">BUILD PREMIUM PUSH 003</div>
+  <div class="build">BUILD FIRESTORE ADMIN 001</div>
 </main>
 
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-messaging-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 <script>
 const firebaseConfig={apiKey:'AIzaSyBltvLoVpGmLKNojphA60RxeVRbClqpnIQ',authDomain:'lilu-vip-club.firebaseapp.com',projectId:'lilu-vip-club',storageBucket:'lilu-vip-club.firebasestorage.app',messagingSenderId:'1032950167061',appId:'1:1032950167061:web:fe66d06c8411241a6a401c'};
 firebase.initializeApp(firebaseConfig);
 const messaging=firebase.messaging();
+const db=firebase.firestore();
 const vapidKey='BIdRTKcm_ku5wTjR3JqK8l5sPANcLyDwCnZjcDQ4lGAfihgWQRFMgzLKq4XqrXQQfpQZMLdTxqPOFEq0Tb-L1dw';
 
 const statusEl = document.getElementById("status");
@@ -60,15 +62,27 @@ const btn = document.getElementById("mainBtn");
 const btnText = document.getElementById("btnText");
 
 function renderApp(LIVE_CONFIG) {
+  infoEl.classList.remove("off");
+
   if (LIVE_CONFIG.isLive === true) {
     statusEl.innerHTML = '<span class="dot"></span>LIVE JUŻ TRWA';
     infoEl.innerText = "Dołącz teraz do transmisji na żywo";
     btnText.innerText = "DOŁĄCZ TERAZ";
-    btn.onclick = () => { window.location.href = LIVE_CONFIG.liveUrl; };
+    btn.onclick = () => {
+      if (LIVE_CONFIG.liveUrl) window.location.href = LIVE_CONFIG.liveUrl;
+      else alert("Link LIVE nie został jeszcze ustawiony.");
+    };
+    return;
+  }
+
+  statusEl.innerText = "NAJBLIŻSZY LIVE";
+  infoEl.innerText = LIVE_CONFIG.nextLiveText || "Obserwuj powiadomienia. Poinformujemy Cię o kolejnym live.";
+  infoEl.classList.add("off");
+
+  if (LIVE_CONFIG.replayUrl) {
+    btnText.innerText = "OGLĄDAJ POWTÓRKĘ";
+    btn.onclick = () => { window.location.href = LIVE_CONFIG.replayUrl; };
   } else {
-    statusEl.innerText = "NAJBLIŻSZY LIVE";
-    infoEl.innerText = LIVE_CONFIG.nextLiveText;
-    infoEl.classList.add("off");
     btnText.innerText = "WŁĄCZ POWIADOMIENIA";
     btn.onclick = enablePush;
   }
@@ -76,17 +90,26 @@ function renderApp(LIVE_CONFIG) {
 
 async function loadFreshConfig() {
   try {
-    const response = await fetch("config.js?t=" + Date.now(), { cache: "no-store" });
-    const configText = await response.text();
-    const match = configText.match(/const\s+LIVE_CONFIG\s*=\s*({[\s\S]*?});/);
-    if (!match) throw new Error("Brak LIVE_CONFIG");
-    const LIVE_CONFIG = Function("return " + match[1])();
-    renderApp(LIVE_CONFIG);
-  } catch (error) {
-    statusEl.innerText = "BŁĄD KONFIGURACJI";
-    infoEl.innerText = "Odśwież aplikację lub spróbuj ponownie za chwilę.";
-    btnText.innerText = "ODŚWIEŻ";
-    btn.onclick = () => window.location.reload();
+    const snap = await db.collection('settings').doc('live').get();
+    if (snap.exists) {
+      renderApp(snap.data());
+      return;
+    }
+    throw new Error('Brak danych Firestore');
+  } catch (firestoreError) {
+    try {
+      const response = await fetch("config.js?t=" + Date.now(), { cache: "no-store" });
+      const configText = await response.text();
+      const match = configText.match(/const\s+LIVE_CONFIG\s*=\s*({[\s\S]*?});/);
+      if (!match) throw new Error("Brak LIVE_CONFIG");
+      const LIVE_CONFIG = Function("return " + match[1])();
+      renderApp(LIVE_CONFIG);
+    } catch (error) {
+      statusEl.innerText = "BŁĄD KONFIGURACJI";
+      infoEl.innerText = "Odśwież aplikację lub spróbuj ponownie za chwilę.";
+      btnText.innerText = "ODŚWIEŻ";
+      btn.onclick = () => window.location.reload();
+    }
   }
 }
 
