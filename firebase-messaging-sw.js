@@ -12,19 +12,38 @@ firebase.initializeApp({
 
 firebase.messaging();
 
+const APP_HOME = 'https://dariuszflajszer-hub.github.io/LILU-LIVE-VIP/';
+const LIVE_REDIRECT = APP_HOME + 'open-live.html?url=';
+
+function normalizeTargetUrl(rawUrl) {
+  if (!rawUrl) return APP_HOME;
+
+  const url = String(rawUrl).trim();
+
+  if (url.startsWith('https://www.facebook.com/') || url.startsWith('https://facebook.com/') || url.startsWith('https://fb.watch/')) {
+    return LIVE_REDIRECT + encodeURIComponent(url);
+  }
+
+  if (url.startsWith('https://dariuszflajszer-hub.github.io/LILU-LIVE-VIP/')) {
+    return url;
+  }
+
+  if (url.startsWith('http://') || url.startsWith('https://')) {
+    return LIVE_REDIRECT + encodeURIComponent(url);
+  }
+
+  return APP_HOME;
+}
+
 self.addEventListener('notificationclick', (event) => {
   event.notification.close();
 
   const data = event.notification.data || {};
   const fcmData = data.FCM_MSG?.data || {};
-  const targetUrl = fcmData.url || data.url || 'https://dariuszflajszer-hub.github.io/LILU-LIVE-VIP/';
+  const rawUrl = fcmData.url || data.url || data.click_action || fcmData.click_action || '';
+  const targetUrl = normalizeTargetUrl(rawUrl);
 
   event.waitUntil(
-    clients.matchAll({ type: 'window', includeUncontrolled: true }).then((clientList) => {
-      for (const client of clientList) {
-        if (client.url === targetUrl && 'focus' in client) return client.focus();
-      }
-      return clients.openWindow(targetUrl);
-    })
+    clients.openWindow(targetUrl)
   );
 });
