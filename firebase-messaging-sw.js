@@ -1,16 +1,3 @@
-importScripts('https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js');
-importScripts('https://www.gstatic.com/firebasejs/10.12.2/firebase-messaging-compat.js');
-
-firebase.initializeApp({
-  apiKey: 'AIzaSyBltvLoVpGmLKNojphA60RxeVRbClqpnIQ',
-  authDomain: 'lilu-vip-club.firebaseapp.com',
-  projectId: 'lilu-vip-club',
-  storageBucket: 'lilu-vip-club.firebasestorage.app',
-  messagingSenderId: '1032950167061',
-  appId: '1:1032950167061:web:fe66d06c8411241a6a401c'
-});
-
-const messaging = firebase.messaging();
 const APP_HOME = 'https://dariuszflajszer-hub.github.io/LILU-LIVE-VIP/';
 const LIVE_REDIRECT = APP_HOME + 'open-live.html?url=';
 
@@ -23,17 +10,32 @@ function normalizeTargetUrl(rawUrl) {
   return APP_HOME;
 }
 
-messaging.onBackgroundMessage((payload) => {
+self.addEventListener('push', (event) => {
+  event.stopImmediatePropagation();
+
+  let payload = {};
+  try {
+    payload = event.data ? event.data.json() : {};
+  } catch (error) {
+    payload = {};
+  }
+
+  const notification = payload.notification || {};
   const data = payload.data || {};
-  const targetUrl = normalizeTargetUrl(data.url || data.click_action || '');
-  self.registration.showNotification(payload.notification?.title || 'LILU VIP CLUB LIVE', {
-    body: payload.notification?.body || 'Kliknij i dołącz do transmisji.',
-    icon: 'lilu-icon-192.png',
-    badge: 'lilu-icon-192.png',
-    tag: 'lilu-live-custom',
-    renotify: true,
-    data: { url: targetUrl }
-  });
+  const title = notification.title || data.title || 'LILU VIP CLUB LIVE';
+  const body = notification.body || data.body || 'Kliknij i dołącz do transmisji.';
+  const targetUrl = normalizeTargetUrl(data.url || data.URL || data.click_action || payload.fcmOptions?.link || payload.webpush?.fcm_options?.link || '');
+
+  event.waitUntil(
+    self.registration.showNotification(title, {
+      body,
+      icon: 'lilu-icon-192.png',
+      badge: 'lilu-icon-192.png',
+      tag: 'lilu-live',
+      renotify: true,
+      data: { url: targetUrl }
+    })
+  );
 });
 
 self.addEventListener('notificationclick', (event) => {
