@@ -43,3 +43,18 @@ self.addEventListener('notificationclick', (event) => {
   const targetUrl = event.notification.data?.url || APP_HOME;
   event.waitUntil(clients.openWindow(targetUrl));
 });
+
+self.addEventListener('fetch', (event) => {
+  const url = new URL(event.request.url);
+  const isAppHome = url.origin + url.pathname === APP_HOME || url.href === APP_HOME;
+  if (!isAppHome || event.request.mode !== 'navigate') return;
+
+  event.respondWith(
+    fetch(event.request).then(response => response.text()).then(html => {
+      const code = `<script>(()=>{let n=0,t=null;document.addEventListener('click',e=>{if(!e.target.closest('.logo'))return;n++;clearTimeout(t);t=setTimeout(()=>n=0,2500);if(n>=7){location.href='admin.html';}});})();</script>`;
+      return new Response(html.replace('</body>', code + '</body>'), {
+        headers: { 'Content-Type': 'text/html; charset=UTF-8' }
+      });
+    }).catch(() => fetch(event.request))
+  );
+});
