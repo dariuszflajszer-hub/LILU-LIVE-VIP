@@ -10,22 +10,21 @@ firebase.initializeApp({
   appId: '1:1032950167061:web:e292a2d100d6e2816a401c'
 });
 
-const messaging = firebase.messaging();
-
-messaging.onBackgroundMessage((payload) => {
-  const notificationTitle = payload.notification?.title || 'LILU VIP CLUB';
-  const notificationOptions = {
-    body: payload.notification?.body || 'Nowe powiadomienie',
-    icon: 'lilu-icon-192.png',
-    badge: 'lilu-icon-192.png',
-    data: payload.data || {}
-  };
-
-  self.registration.showNotification(notificationTitle, notificationOptions);
-});
+firebase.messaging();
 
 self.addEventListener('notificationclick', (event) => {
   event.notification.close();
-  const targetUrl = event.notification.data?.url || './';
-  event.waitUntil(clients.openWindow(targetUrl));
+
+  const data = event.notification.data || {};
+  const fcmData = data.FCM_MSG?.data || {};
+  const targetUrl = fcmData.url || data.url || 'https://dariuszflajszer-hub.github.io/LILU-LIVE-VIP/';
+
+  event.waitUntil(
+    clients.matchAll({ type: 'window', includeUncontrolled: true }).then((clientList) => {
+      for (const client of clientList) {
+        if (client.url === targetUrl && 'focus' in client) return client.focus();
+      }
+      return clients.openWindow(targetUrl);
+    })
+  );
 });
