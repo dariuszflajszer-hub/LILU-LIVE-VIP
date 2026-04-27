@@ -7,7 +7,7 @@ firebase.initializeApp({
   projectId: 'lilu-vip-club',
   storageBucket: 'lilu-vip-club.firebasestorage.app',
   messagingSenderId: '1032950167061',
-  appId: '1:1032950167061:web:e292a2d100d6e2816a401c'
+  appId: '1:1032950167061:web:fe66d06c8411241a6a401c'
 });
 
 const messaging = firebase.messaging();
@@ -26,7 +26,6 @@ function normalizeTargetUrl(rawUrl) {
 messaging.onBackgroundMessage((payload) => {
   const data = payload.data || {};
   const targetUrl = normalizeTargetUrl(data.url || data.click_action || '');
-
   self.registration.showNotification(payload.notification?.title || 'LILU VIP CLUB LIVE', {
     body: payload.notification?.body || 'Kliknij i dołącz do transmisji.',
     icon: 'lilu-icon-192.png',
