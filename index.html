@@ -126,6 +126,20 @@ async function loadFreshConfig() {
   }
 }
 
+function startLiveAutoRefresh(){
+  try {
+    db.collection('settings').doc('live').onSnapshot(snapshot => {
+      if (snapshot.exists) renderApp(snapshot.data());
+    }, error => {
+      console.warn('Live auto-refresh fallback:', error);
+      setInterval(loadFreshConfig, 30000);
+    });
+  } catch (e) {
+    console.warn('Live auto-refresh unavailable:', e);
+    setInterval(loadFreshConfig, 30000);
+  }
+}
+
 async function enablePush(){
   try{
     if (!('Notification' in window) || !('serviceWorker' in navigator)) {
@@ -150,6 +164,7 @@ async function enablePush(){
 
 document.getElementById('bell').onclick = enablePush;
 loadFreshConfig();
+startLiveAutoRefresh();
 </script>
 </body>
 </html>
