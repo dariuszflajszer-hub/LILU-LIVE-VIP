@@ -1,0 +1,11 @@
+KOPIA ZAPASOWA PRZED ZMIANĄ: USUNIĘCIE KORON, KLEPSYDRA I ZŁOTE OBWÓDKI PRZYCISKÓW
+
+data: 2026-06-01
+repozytorium: dariuszflajszer-hub/LILU-LIVE-VIP
+stan bazowy przed zmianą: cff08827769db3ba21c2e560051f2911c9ec824f
+ostatni stabilny stan do awaryjnego powrotu: 792747f06e041664c4678d42dd0a6500b966917b
+
+Zakres planowanej zmiany:
+1. Usunięcie ikon koron ze wszystkich miejsc.
+2. Wstawienie klepsydry na ekranie LIVE ZA 15 MINUT.
+3. Dodanie dekoracyjnych złotych obwódek przycisków jak na przesłanym wzorze.
