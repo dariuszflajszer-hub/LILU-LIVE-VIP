@@ -1,0 +1,10 @@
+KOPIA ZAPASOWA PRZED POPRAWĄ KSZTAŁTU ZŁOTEJ KLEPSYDRY
+
+data: 2026-06-01
+repozytorium: dariuszflajszer-hub/LILU-LIVE-VIP
+stan bazowy przed zmianą: a0ab5d453bb0f86fc1746b67db73ba1f8f64b76b
+ostatni stabilny stan do awaryjnego powrotu: 792747f06e041664c4678d42dd0a6500b966917b
+
+Zakres planowanej zmiany:
+1. Poprawa grafiki klepsydry, aby była wyraźnie klepsydrą i nie wyglądała jak hostia.
+2. Bez zmian w admin.html.
