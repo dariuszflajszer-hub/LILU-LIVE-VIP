@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
@@ -21,20 +21,20 @@ body{display:flex;align-items:center;justify-content:center;padding:0;background
 h1{font-size:clamp(25px,6.3vw,34px);line-height:1.1;letter-spacing:.055em;font-weight:900;color:#8d1131;margin:4px 0 24px;white-space:nowrap;position:relative;z-index:1;cursor:pointer;border:2px solid #d0a13b;border-radius:20px;padding:15px 22px;background:rgba(255,255,255,.42);box-shadow:0 10px 28px rgba(141,17,49,.10),0 0 0 1px rgba(255,255,255,.88) inset,0 0 0 4px rgba(208,161,59,.16) inset,inset 0 1px 0 rgba(255,255,255,.9)}
 h1:active{transform:scale(.985)}
 h1.inviteHidden{display:none}
-.divider{width:78%;display:flex;align-items:center;gap:18px;margin:0 auto 26px;color:#c79a4f;position:relative;z-index:1}.divider:before,.divider:after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,#d4a75c,transparent)}.divider span{font-size:35px;line-height:1;color:#d0a05a}.divider.hourglass{margin-top:8px;margin-bottom:28px}.divider.hourglass span{display:flex;align-items:center;justify-content:center}.app.soonView .divider.hourglass{margin-top:58px;margin-bottom:46px}.hourglassArt{width:76px;height:86px;display:block;filter:drop-shadow(0 12px 16px rgba(133,82,12,.24))}
+.divider{width:78%;display:flex;align-items:center;gap:18px;margin:0 auto 26px;color:#c79a4f;position:relative;z-index:1}.divider:before,.divider:after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,#d4a75c,transparent)}.divider span{font-size:35px;line-height:1;color:#d0a05a}.divider.hourglass{margin-top:8px;margin-bottom:28px}.divider.hourglass span{display:flex;align-items:center;justify-content:center}.app.soonView .divider.hourglass{margin-top:58px;margin-bottom:46px}.hourglassArt{width:86px;height:auto;display:block;filter:drop-shadow(0 12px 16px rgba(133,82,12,.24))}
 .liveBox{width:100%;padding:22px 8px 28px;margin:0 0 26px;position:relative;z-index:1}.status{font-size:clamp(28px,7.4vw,36px);font-weight:900;letter-spacing:.06em;color:#7d102e;line-height:1.15;margin-bottom:18px;white-space:nowrap}.dot{display:inline-block;width:19px;height:19px;border-radius:50%;background:#ec2e61;margin-right:12px;vertical-align:middle;box-shadow:0 0 22px rgba(236,46,97,.35);animation:pulse 1.15s ease-in-out infinite}@keyframes pulse{0%{transform:scale(1);opacity:1}50%{transform:scale(1.26);opacity:.85}100%{transform:scale(1);opacity:1}}.info{font-size:clamp(22px,6vw,30px);line-height:1.35;color:#3d3035;font-weight:400}.info.off{font-weight:700;color:#8d1131}
 .cta{width:100%;border:2px solid #d0a13b;border-radius:26px;padding:22px 20px;margin-top:auto;background:linear-gradient(180deg,#c4144d 0%,#8f0e32 52%,#67091f 100%);color:#fff;font-size:clamp(26px,7vw,36px);font-weight:900;letter-spacing:.08em;box-shadow:0 18px 42px rgba(150,17,55,.36),0 0 0 2px rgba(255,238,164,.95) inset,0 0 0 5px rgba(170,112,22,.58) inset,0 0 18px rgba(255,221,113,.46) inset,inset 0 1px 0 rgba(255,255,255,.28);cursor:pointer;position:relative;z-index:1}.cta.inactive{opacity:.92;cursor:default}.vip{margin-top:20px;font-size:17px;color:#6b555d;display:flex;align-items:center;justify-content:center;gap:10px;position:relative;z-index:1}.vip span{color:#c79a4f}.small-divider{width:58%;display:flex;align-items:center;gap:17px;margin:24px auto 18px;color:#c79a4f;position:relative;z-index:1}.small-divider:before,.small-divider:after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,#d4a75c,transparent)}.note{font-size:18px;color:#7a626b;line-height:1.3;position:relative;z-index:1}.build{font-size:13px;letter-spacing:.18em;color:#d686a3;margin-top:18px;position:relative;z-index:1}
 .shareModal{display:none;position:fixed;inset:0;background:rgba(25,5,13,.78);z-index:9999;padding:18px;overflow:auto}.shareCard{max-width:420px;margin:18px auto;background:linear-gradient(180deg,#fff 0%,#fff5f9 58%,#ffeef5 100%);border-radius:28px;padding:24px 22px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.35)}.shareHeart{font-size:34px;margin-bottom:8px}.shareTitle{font-size:28px;line-height:1.12;color:#8d1131;margin-bottom:12px;font-weight:900}.shareText{font-size:20px;color:#4b2a35;line-height:1.35;margin-bottom:18px;font-weight:700}.shareQr{width:270px;max-width:92%;border-radius:18px;margin:0 auto 18px;display:block}.shareSteps{font-size:16px;color:#6b555d;line-height:1.55;background:rgba(255,255,255,.65);border-radius:18px;padding:14px}.shareClose{margin-top:18px;padding:14px 28px;border:2px solid #d0a13b;border-radius:18px;background:#8d1131;color:white;font-size:18px;font-weight:800;cursor:pointer;box-shadow:0 0 0 2px rgba(255,238,164,.85) inset,0 0 0 4px rgba(170,112,22,.45) inset}
-@media (max-height:740px){.app{padding:12px 22px}.bell{width:50px;height:50px}.logo{width:142px;margin-top:52px;margin-bottom:14px}h1{font-size:22px;margin-bottom:16px;padding:13px 18px;border-radius:18px}.divider{margin-bottom:18px}.app.soonView .divider.hourglass{margin-top:40px;margin-bottom:32px}.hourglassArt{width:62px;height:72px}.liveBox{padding:18px 6px 20px;margin-bottom:18px}.status{font-size:25px;margin-bottom:12px}.info{font-size:21px}.cta{padding:19px 16px;font-size:25px}.vip{margin-top:13px}.small-divider{margin:16px auto 10px}.note{font-size:15px}.build{display:none}.shareCard{margin:8px auto;padding:18px}.shareQr{width:230px}.shareTitle{font-size:24px}.shareText{font-size:17px}.shareSteps{font-size:14px}}
+@media (max-height:740px){.app{padding:12px 22px}.bell{width:50px;height:50px}.logo{width:142px;margin-top:52px;margin-bottom:14px}h1{font-size:22px;margin-bottom:16px;padding:13px 18px;border-radius:18px}.divider{margin-bottom:18px}.app.soonView .divider.hourglass{margin-top:40px;margin-bottom:32px}.hourglassArt{width:70px;height:auto}.liveBox{padding:18px 6px 20px;margin-bottom:18px}.status{font-size:25px;margin-bottom:12px}.info{font-size:21px}.cta{padding:19px 16px;font-size:25px}.vip{margin-top:13px}.small-divider{margin:16px auto 10px}.note{font-size:15px}.build{display:none}.shareCard{margin:8px auto;padding:18px}.shareQr{width:230px}.shareTitle{font-size:24px}.shareText{font-size:17px}.shareSteps{font-size:14px}}
 @media (max-width:370px){.app{padding-left:18px;padding-right:18px}.logo{width:150px}h1{font-size:21px;padding:12px 14px}.status{font-size:24px}.info{font-size:20px}.cta{font-size:23px}}
 </style>
 </head>
 <body>
 <main class="app">
-  <div class="bell" id="bell" aria-label="Powiadomienia">🔔</div>
+  <div class="bell" id="bell" aria-label="Powiadomienia">đź””</div>
   <img src="serce-logo-png.png" class="logo" alt="LILU LIVE">
-  <h1 id="inviteTitle">ZAPROŚ PRZYJACIÓŁKĘ</h1>
-  <div class="divider" id="mainDivider"><span id="dividerIcon">♡</span></div>
+  <h1 id="inviteTitle">ZAPROĹš PRZYJACIĂ“ĹKÄ</h1>
+  <div class="divider" id="mainDivider"><span id="dividerIcon">â™ˇ</span></div>
 
   <section class="liveBox">
     <div class="status" id="status"></div>
@@ -43,23 +43,23 @@ h1.inviteHidden{display:none}
 
   <button class="cta" id="mainBtn"><span id="btnText"></span></button>
 
-  <div class="vip"><span>♙</span> Tylko dla członków VIP</div>
-  <div class="small-divider">◇</div>
+  <div class="vip"><span>â™™</span> Tylko dla czĹ‚onkĂłw VIP</div>
+  <div class="small-divider">â—‡</div>
   <div class="note">Bez spamu. Tylko informacje o live.</div>
   <div class="build">BUILD FIRESTORE ADMIN 001</div>
 </main>
 
 <div id="shareModal" class="shareModal">
   <div class="shareCard">
-    <div class="shareHeart">❤️</div>
-    <div class="shareTitle">Podziel się sercem LILU</div>
-    <div class="shareText">Podaruj dostęp naprawdę wyjątkowej Kobiecie.</div>
+    <div class="shareHeart">âť¤ď¸Ź</div>
+    <div class="shareTitle">Podziel siÄ™ sercem LILU</div>
+    <div class="shareText">Podaruj dostÄ™p naprawdÄ™ wyjÄ…tkowej Kobiecie.</div>
     <img src="qr-lilu-share.png" class="shareQr" alt="Kod QR LILU VIP CLUB">
     <div class="shareSteps">
-      <strong>📱 Dołącz w minutę</strong><br><br>
+      <strong>đź“± DoĹ‚Ä…cz w minutÄ™</strong><br><br>
       1. Zeskanuj kod<br>
-      2. Dodaj aplikację do ekranu<br>
-      3. Włącz powiadomienia 🔔
+      2. Dodaj aplikacjÄ™ do ekranu<br>
+      3. WĹ‚Ä…cz powiadomienia đź””
     </div>
     <button class="shareClose" id="shareCloseBtn">Zamknij</button>
   </div>
@@ -84,7 +84,7 @@ const shareModal = document.getElementById("shareModal");
 const mainDivider = document.getElementById("mainDivider");
 const dividerIcon = document.getElementById("dividerIcon");
 const inviteTitle = document.getElementById("inviteTitle");
-const goldHourglass = `<svg class="hourglassArt" viewBox="0 0 96 116" role="img" aria-label="Złota klepsydra" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="gold" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#fff3ad"/><stop offset=".22" stop-color="#f8ca4e"/><stop offset=".48" stop-color="#b77912"/><stop offset=".72" stop-color="#f6da73"/><stop offset="1" stop-color="#7b4707"/></linearGradient><linearGradient id="glass" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#fffaf0" stop-opacity=".78"/><stop offset=".45" stop-color="#fff6d8" stop-opacity=".28"/><stop offset="1" stop-color="#d79a22" stop-opacity=".18"/></linearGradient><filter id="shine" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="8" stdDeviation="5" flood-color="#8d5209" flood-opacity=".24"/></filter></defs><g filter="url(#shine)"><rect x="20" y="4" width="56" height="9" rx="4" fill="url(#gold)"/><rect x="13" y="13" width="70" height="8" rx="4" fill="url(#gold)"/><rect x="20" y="95" width="56" height="9" rx="4" fill="url(#gold)"/><rect x="13" y="104" width="70" height="8" rx="4" fill="url(#gold)"/><path d="M28 23C31 42 40 50 48 58C40 66 31 74 28 93H68C65 74 56 66 48 58C56 50 65 42 68 23H28Z" fill="url(#glass)" stroke="#d7a33c" stroke-width="3" stroke-linejoin="round"/><path d="M34 29H62C60 41 54 49 48 54C42 49 36 41 34 29Z" fill="#e8ac20"/><path d="M48 60L63 88H33L48 60Z" fill="#f0b929"/><path d="M45 55H51V64H45Z" fill="#f7d566"/><path d="M36 86H60" stroke="#fff0a5" stroke-width="4" stroke-linecap="round" opacity=".72"/><path d="M34 24C39 39 44 49 48 58C52 49 57 39 62 24" fill="none" stroke="#fff6cf" stroke-width="3" stroke-linecap="round" opacity=".5"/><path d="M24 20V96M72 20V96" stroke="#a7650d" stroke-width="4" stroke-linecap="round" opacity=".78"/><path d="M27 20V96M69 20V96" stroke="#ffd978" stroke-width="2" stroke-linecap="round" opacity=".72"/></g></svg>`;
+const goldHourglass = `<img src="hourglass-lilu.png" class="hourglassArt" alt="Złota klepsydra">`;
 
 function setDividerIcon(icon, isHourglass) {
   if (isHourglass) dividerIcon.innerHTML = icon;
@@ -97,17 +97,17 @@ function renderApp(LIVE_CONFIG) {
   btn.classList.remove("inactive");
   app.classList.remove("soonView");
   inviteTitle.classList.remove("inviteHidden");
-  setDividerIcon("♡", false);
+  setDividerIcon("â™ˇ", false);
 
   const mode = LIVE_CONFIG.liveMode || (LIVE_CONFIG.isLive === true ? "live" : (LIVE_CONFIG.liveSoon === true ? "soon" : "replay"));
 
   if (mode === "live") {
-    statusEl.innerHTML = '<span class="dot"></span>LIVE JUŻ TRWA';
-    infoEl.innerText = "Dołącz teraz do transmisji na żywo";
-    btnText.innerText = "DOŁĄCZ TERAZ";
+    statusEl.innerHTML = '<span class="dot"></span>LIVE JUĹ» TRWA';
+    infoEl.innerText = "DoĹ‚Ä…cz teraz do transmisji na ĹĽywo";
+    btnText.innerText = "DOĹÄ„CZ TERAZ";
     btn.onclick = () => {
       if (LIVE_CONFIG.liveUrl) window.location.href = LIVE_CONFIG.liveUrl;
-      else alert("Link LIVE nie został jeszcze ustawiony.");
+      else alert("Link LIVE nie zostaĹ‚ jeszcze ustawiony.");
     };
     return;
   }
@@ -119,21 +119,21 @@ function renderApp(LIVE_CONFIG) {
     statusEl.innerText = "ZACZYNAMY ZA 15 MIN.";
     infoEl.innerText = "";
     infoEl.classList.add("off");
-    btnText.innerText = "TRWAJĄ OSTATNIE PRZYGOTOWANIA";
+    btnText.innerText = "TRWAJÄ„ OSTATNIE PRZYGOTOWANIA";
     btn.classList.add("inactive");
     btn.onclick = () => {};
     return;
   }
 
   statusEl.innerText = "RETRANSMISJA";
-  infoEl.innerText = "ZOBACZ! zanim znikną wszystkie stylizacje";
+  infoEl.innerText = "ZOBACZ! zanim zniknÄ… wszystkie stylizacje";
   infoEl.classList.add("off");
 
   if (LIVE_CONFIG.replayUrl) {
-    btnText.innerText = "OGLĄDAJ POWTÓRKĘ";
+    btnText.innerText = "OGLÄ„DAJ POWTĂ“RKÄ";
     btn.onclick = () => { window.location.href = LIVE_CONFIG.replayUrl; };
   } else {
-    btnText.innerText = "WŁĄCZ POWIADOMIENIA";
+    btnText.innerText = "WĹÄ„CZ POWIADOMIENIA";
     btn.onclick = enablePush;
   }
 }
@@ -155,9 +155,9 @@ async function loadFreshConfig() {
       const LIVE_CONFIG = Function("return " + match[1])();
       renderApp(LIVE_CONFIG);
     } catch (error) {
-      statusEl.innerText = "BŁĄD KONFIGURACJI";
-      infoEl.innerText = "Odśwież aplikację lub spróbuj ponownie za chwilę.";
-      btnText.innerText = "ODŚWIEŻ";
+      statusEl.innerText = "BĹÄ„D KONFIGURACJI";
+      infoEl.innerText = "OdĹ›wieĹĽ aplikacjÄ™ lub sprĂłbuj ponownie za chwilÄ™.";
+      btnText.innerText = "ODĹšWIEĹ»";
       btn.onclick = () => window.location.reload();
     }
   }
@@ -180,7 +180,7 @@ function startLiveAutoRefresh(){
 async function enablePush(){
   try{
     if (!('Notification' in window) || !('serviceWorker' in navigator)) {
-      alert('To urządzenie nie obsługuje powiadomień web push.');
+      alert('To urzÄ…dzenie nie obsĹ‚uguje powiadomieĹ„ web push.');
       return;
     }
     const permission = await Notification.requestPermission();
@@ -191,11 +191,11 @@ async function enablePush(){
     const reg = await navigator.serviceWorker.register('./firebase-messaging-sw.js');
     const token = await messaging.getToken({vapidKey:vapidKey, serviceWorkerRegistration:reg});
     localStorage.setItem('fcmToken', token);
-    alert('Powiadomienia włączone.');
+    alert('Powiadomienia wĹ‚Ä…czone.');
     console.log('FCM TOKEN:', token);
   }catch(e){
     console.error(e);
-    alert('Błąd konfiguracji powiadomień.');
+    alert('BĹ‚Ä…d konfiguracji powiadomieĹ„.');
   }
 }
 
