@@ -18,13 +18,13 @@ body{display:flex;align-items:center;justify-content:center;padding:0;background
 .bell{position:absolute;top:18px;right:22px;width:58px;height:58px;border-radius:50%;background:rgba(255,255,255,.94);display:flex;align-items:center;justify-content:center;font-size:25px;box-shadow:0 14px 34px rgba(105,22,45,.12);z-index:3;cursor:pointer}
 .bell:after{content:"";position:absolute;top:10px;right:9px;width:14px;height:14px;border-radius:50%;background:#ec2e61;box-shadow:0 0 0 5px rgba(236,46,97,.08)}
 .logo{width:176px;margin:72px auto 20px;display:block;filter:drop-shadow(0 18px 24px rgba(150,17,55,.28));position:relative;z-index:1}
-h1{font-size:clamp(25px,6.3vw,34px);line-height:1.1;letter-spacing:.055em;font-weight:900;color:#8d1131;margin:4px 0 24px;white-space:nowrap;position:relative;z-index:1;cursor:pointer;border:2px solid rgba(141,17,49,.82);border-radius:20px;padding:15px 22px;background:rgba(255,255,255,.38);box-shadow:0 10px 28px rgba(141,17,49,.10),inset 0 1px 0 rgba(255,255,255,.9)}
+h1{font-size:clamp(25px,6.3vw,34px);line-height:1.1;letter-spacing:.055em;font-weight:900;color:#8d1131;margin:4px 0 24px;white-space:nowrap;position:relative;z-index:1;cursor:pointer;border:2px solid #d0a13b;border-radius:20px;padding:15px 22px;background:rgba(255,255,255,.42);box-shadow:0 10px 28px rgba(141,17,49,.10),0 0 0 1px rgba(255,255,255,.88) inset,0 0 0 4px rgba(208,161,59,.16) inset,inset 0 1px 0 rgba(255,255,255,.9)}
 h1:active{transform:scale(.985)}
-.divider{width:78%;display:flex;align-items:center;gap:18px;margin:0 auto 26px;color:#c79a4f;position:relative;z-index:1}.divider:before,.divider:after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,#d4a75c,transparent)}.divider span{font-size:35px;line-height:1;color:#d0a05a}
+.divider{width:78%;display:flex;align-items:center;gap:18px;margin:0 auto 26px;color:#c79a4f;position:relative;z-index:1}.divider:before,.divider:after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,#d4a75c,transparent)}.divider span{font-size:35px;line-height:1;color:#d0a05a}.divider.hourglass{margin-top:8px;margin-bottom:28px}.divider.hourglass span{font-size:62px;filter:drop-shadow(0 10px 14px rgba(157,103,22,.22))}
 .liveBox{width:100%;padding:22px 8px 28px;margin:0 0 26px;position:relative;z-index:1}.status{font-size:clamp(28px,7.4vw,36px);font-weight:900;letter-spacing:.06em;color:#7d102e;line-height:1.15;margin-bottom:18px;white-space:nowrap}.dot{display:inline-block;width:19px;height:19px;border-radius:50%;background:#ec2e61;margin-right:12px;vertical-align:middle;box-shadow:0 0 22px rgba(236,46,97,.35);animation:pulse 1.15s ease-in-out infinite}@keyframes pulse{0%{transform:scale(1);opacity:1}50%{transform:scale(1.26);opacity:.85}100%{transform:scale(1);opacity:1}}.info{font-size:clamp(22px,6vw,30px);line-height:1.35;color:#3d3035;font-weight:400}.info.off{font-weight:700;color:#8d1131}
-.cta{width:100%;border:0;border-radius:26px;padding:22px 20px;margin-top:auto;background:linear-gradient(180deg,#c4144d 0%,#8f0e32 52%,#67091f 100%);color:#fff;font-size:clamp(26px,7vw,36px);font-weight:900;letter-spacing:.08em;box-shadow:0 18px 42px rgba(150,17,55,.36),inset 0 1px 0 rgba(255,255,255,.28);cursor:pointer;position:relative;z-index:1}.cta.inactive{opacity:.92;cursor:default}.cta .crown{color:#e4bc6e;margin-right:18px;font-size:.9em}.vip{margin-top:20px;font-size:17px;color:#6b555d;display:flex;align-items:center;justify-content:center;gap:10px;position:relative;z-index:1}.vip span{color:#c79a4f}.small-divider{width:58%;display:flex;align-items:center;gap:17px;margin:24px auto 18px;color:#c79a4f;position:relative;z-index:1}.small-divider:before,.small-divider:after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,#d4a75c,transparent)}.note{font-size:18px;color:#7a626b;line-height:1.3;position:relative;z-index:1}.build{font-size:13px;letter-spacing:.18em;color:#d686a3;margin-top:18px;position:relative;z-index:1}
-.shareModal{display:none;position:fixed;inset:0;background:rgba(25,5,13,.78);z-index:9999;padding:18px;overflow:auto}.shareCard{max-width:420px;margin:18px auto;background:linear-gradient(180deg,#fff 0%,#fff5f9 58%,#ffeef5 100%);border-radius:28px;padding:24px 22px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.35)}.shareHeart{font-size:34px;margin-bottom:8px}.shareTitle{font-size:28px;line-height:1.12;color:#8d1131;margin-bottom:12px;font-weight:900}.shareText{font-size:20px;color:#4b2a35;line-height:1.35;margin-bottom:18px;font-weight:700}.shareQr{width:270px;max-width:92%;border-radius:18px;margin:0 auto 18px;display:block}.shareSteps{font-size:16px;color:#6b555d;line-height:1.55;background:rgba(255,255,255,.65);border-radius:18px;padding:14px}.shareClose{margin-top:18px;padding:14px 28px;border:none;border-radius:18px;background:#8d1131;color:white;font-size:18px;font-weight:800;cursor:pointer}
-@media (max-height:740px){.app{padding:12px 22px}.bell{width:50px;height:50px}.logo{width:142px;margin-top:52px;margin-bottom:14px}h1{font-size:22px;margin-bottom:16px;padding:13px 18px;border-radius:18px}.divider{margin-bottom:18px}.liveBox{padding:18px 6px 20px;margin-bottom:18px}.status{font-size:25px;margin-bottom:12px}.info{font-size:21px}.cta{padding:19px 16px;font-size:25px}.vip{margin-top:13px}.small-divider{margin:16px auto 10px}.note{font-size:15px}.build{display:none}.shareCard{margin:8px auto;padding:18px}.shareQr{width:230px}.shareTitle{font-size:24px}.shareText{font-size:17px}.shareSteps{font-size:14px}}
+.cta{width:100%;border:2px solid #d0a13b;border-radius:26px;padding:22px 20px;margin-top:auto;background:linear-gradient(180deg,#c4144d 0%,#8f0e32 52%,#67091f 100%);color:#fff;font-size:clamp(26px,7vw,36px);font-weight:900;letter-spacing:.08em;box-shadow:0 18px 42px rgba(150,17,55,.36),0 0 0 2px rgba(255,238,164,.95) inset,0 0 0 5px rgba(170,112,22,.58) inset,0 0 18px rgba(255,221,113,.46) inset,inset 0 1px 0 rgba(255,255,255,.28);cursor:pointer;position:relative;z-index:1}.cta.inactive{opacity:.92;cursor:default}.vip{margin-top:20px;font-size:17px;color:#6b555d;display:flex;align-items:center;justify-content:center;gap:10px;position:relative;z-index:1}.vip span{color:#c79a4f}.small-divider{width:58%;display:flex;align-items:center;gap:17px;margin:24px auto 18px;color:#c79a4f;position:relative;z-index:1}.small-divider:before,.small-divider:after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,#d4a75c,transparent)}.note{font-size:18px;color:#7a626b;line-height:1.3;position:relative;z-index:1}.build{font-size:13px;letter-spacing:.18em;color:#d686a3;margin-top:18px;position:relative;z-index:1}
+.shareModal{display:none;position:fixed;inset:0;background:rgba(25,5,13,.78);z-index:9999;padding:18px;overflow:auto}.shareCard{max-width:420px;margin:18px auto;background:linear-gradient(180deg,#fff 0%,#fff5f9 58%,#ffeef5 100%);border-radius:28px;padding:24px 22px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.35)}.shareHeart{font-size:34px;margin-bottom:8px}.shareTitle{font-size:28px;line-height:1.12;color:#8d1131;margin-bottom:12px;font-weight:900}.shareText{font-size:20px;color:#4b2a35;line-height:1.35;margin-bottom:18px;font-weight:700}.shareQr{width:270px;max-width:92%;border-radius:18px;margin:0 auto 18px;display:block}.shareSteps{font-size:16px;color:#6b555d;line-height:1.55;background:rgba(255,255,255,.65);border-radius:18px;padding:14px}.shareClose{margin-top:18px;padding:14px 28px;border:2px solid #d0a13b;border-radius:18px;background:#8d1131;color:white;font-size:18px;font-weight:800;cursor:pointer;box-shadow:0 0 0 2px rgba(255,238,164,.85) inset,0 0 0 4px rgba(170,112,22,.45) inset}
+@media (max-height:740px){.app{padding:12px 22px}.bell{width:50px;height:50px}.logo{width:142px;margin-top:52px;margin-bottom:14px}h1{font-size:22px;margin-bottom:16px;padding:13px 18px;border-radius:18px}.divider{margin-bottom:18px}.divider.hourglass span{font-size:50px}.liveBox{padding:18px 6px 20px;margin-bottom:18px}.status{font-size:25px;margin-bottom:12px}.info{font-size:21px}.cta{padding:19px 16px;font-size:25px}.vip{margin-top:13px}.small-divider{margin:16px auto 10px}.note{font-size:15px}.build{display:none}.shareCard{margin:8px auto;padding:18px}.shareQr{width:230px}.shareTitle{font-size:24px}.shareText{font-size:17px}.shareSteps{font-size:14px}}
 @media (max-width:370px){.app{padding-left:18px;padding-right:18px}.logo{width:150px}h1{font-size:21px;padding:12px 14px}.status{font-size:24px}.info{font-size:20px}.cta{font-size:23px}}
 </style>
 </head>
@@ -33,14 +33,14 @@ h1:active{transform:scale(.985)}
   <div class="bell" id="bell" aria-label="Powiadomienia">🔔</div>
   <img src="serce-logo-png.png" class="logo" alt="LILU LIVE">
   <h1 id="inviteTitle">ZAPROŚ PRZYJACIÓŁKĘ</h1>
-  <div class="divider"><span>♡</span></div>
+  <div class="divider" id="mainDivider"><span id="dividerIcon">♡</span></div>
 
   <section class="liveBox">
     <div class="status" id="status"></div>
     <div class="info" id="info"></div>
   </section>
 
-  <button class="cta" id="mainBtn"><span class="crown">♕</span><span id="btnText"></span></button>
+  <button class="cta" id="mainBtn"><span id="btnText"></span></button>
 
   <div class="vip"><span>♙</span> Tylko dla członków VIP</div>
   <div class="small-divider">◇</div>
@@ -79,10 +79,18 @@ const infoEl = document.getElementById("info");
 const btn = document.getElementById("mainBtn");
 const btnText = document.getElementById("btnText");
 const shareModal = document.getElementById("shareModal");
+const mainDivider = document.getElementById("mainDivider");
+const dividerIcon = document.getElementById("dividerIcon");
+
+function setDividerIcon(icon, isHourglass) {
+  dividerIcon.innerText = icon;
+  mainDivider.classList.toggle("hourglass", isHourglass);
+}
 
 function renderApp(LIVE_CONFIG) {
   infoEl.classList.remove("off");
   btn.classList.remove("inactive");
+  setDividerIcon("♡", false);
 
   const mode = LIVE_CONFIG.liveMode || (LIVE_CONFIG.isLive === true ? "live" : (LIVE_CONFIG.liveSoon === true ? "soon" : "replay"));
 
@@ -98,8 +106,9 @@ function renderApp(LIVE_CONFIG) {
   }
 
   if (mode === "soon") {
-    statusEl.innerText = "NAJBLIŻSZY LIVE";
-    infoEl.innerText = "LIVE STARTUJE ZA 15 MINUT";
+    setDividerIcon("⏳", true);
+    statusEl.innerText = "ZACZYNAMY ZA 15 MIN.";
+    infoEl.innerText = "";
     infoEl.classList.add("off");
     btnText.innerText = "TRWAJĄ OSTATNIE PRZYGOTOWANIA";
     btn.classList.add("inactive");
