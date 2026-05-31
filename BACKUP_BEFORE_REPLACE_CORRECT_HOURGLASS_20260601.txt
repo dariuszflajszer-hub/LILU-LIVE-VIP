@@ -1,0 +1,10 @@
+KOPIA ZAPASOWA PRZED PODMIANĄ NA WŁAŚCIWY PLIK KLEPSYDRY
+
+data: 2026-06-01
+repozytorium: dariuszflajszer-hub/LILU-LIVE-VIP
+stan bazowy przed zmianą: a137cd209574a8ff32a181290582b7fae200ef5e
+ostatni stabilny stan do awaryjnego powrotu: 792747f06e041664c4678d42dd0a6500b966917b
+
+Zakres planowanej zmiany:
+1. Podmiana pliku hourglass-lilu.png na właściwą grafikę wskazaną przez użytkownika.
+2. Bez zmian w admin.html.
