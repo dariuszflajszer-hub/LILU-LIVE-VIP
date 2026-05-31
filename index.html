@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
@@ -31,10 +31,10 @@ h1.inviteHidden{display:none}
 </head>
 <body>
 <main class="app">
-  <div class="bell" id="bell" aria-label="Powiadomienia">đź””</div>
+  <div class="bell" id="bell" aria-label="Powiadomienia">🔔</div>
   <img src="serce-logo-png.png" class="logo" alt="LILU LIVE">
-  <h1 id="inviteTitle">ZAPROĹš PRZYJACIĂ“ĹKÄ</h1>
-  <div class="divider" id="mainDivider"><span id="dividerIcon">â™ˇ</span></div>
+  <h1 id="inviteTitle">ZAPROŚ PRZYJACIÓŁKĘ</h1>
+  <div class="divider" id="mainDivider"><span id="dividerIcon">♡</span></div>
 
   <section class="liveBox">
     <div class="status" id="status"></div>
@@ -43,23 +43,23 @@ h1.inviteHidden{display:none}
 
   <button class="cta" id="mainBtn"><span id="btnText"></span></button>
 
-  <div class="vip"><span>â™™</span> Tylko dla czĹ‚onkĂłw VIP</div>
-  <div class="small-divider">â—‡</div>
+  <div class="vip"><span>♙</span> Tylko dla członków VIP</div>
+  <div class="small-divider">◇</div>
   <div class="note">Bez spamu. Tylko informacje o live.</div>
   <div class="build">BUILD FIRESTORE ADMIN 001</div>
 </main>
 
 <div id="shareModal" class="shareModal">
   <div class="shareCard">
-    <div class="shareHeart">âť¤ď¸Ź</div>
-    <div class="shareTitle">Podziel siÄ™ sercem LILU</div>
-    <div class="shareText">Podaruj dostÄ™p naprawdÄ™ wyjÄ…tkowej Kobiecie.</div>
+    <div class="shareHeart">❤️</div>
+    <div class="shareTitle">Podziel się sercem LILU</div>
+    <div class="shareText">Podaruj dostęp naprawdę wyjątkowej Kobiecie.</div>
     <img src="qr-lilu-share.png" class="shareQr" alt="Kod QR LILU VIP CLUB">
     <div class="shareSteps">
-      <strong>đź“± DoĹ‚Ä…cz w minutÄ™</strong><br><br>
+      <strong>📱 Dołącz w minutę</strong><br><br>
       1. Zeskanuj kod<br>
-      2. Dodaj aplikacjÄ™ do ekranu<br>
-      3. WĹ‚Ä…cz powiadomienia đź””
+      2. Dodaj aplikację do ekranu<br>
+      3. Włącz powiadomienia 🔔
     </div>
     <button class="shareClose" id="shareCloseBtn">Zamknij</button>
   </div>
@@ -97,17 +97,17 @@ function renderApp(LIVE_CONFIG) {
   btn.classList.remove("inactive");
   app.classList.remove("soonView");
   inviteTitle.classList.remove("inviteHidden");
-  setDividerIcon("â™ˇ", false);
+  setDividerIcon("♡", false);
 
   const mode = LIVE_CONFIG.liveMode || (LIVE_CONFIG.isLive === true ? "live" : (LIVE_CONFIG.liveSoon === true ? "soon" : "replay"));
 
   if (mode === "live") {
-    statusEl.innerHTML = '<span class="dot"></span>LIVE JUĹ» TRWA';
-    infoEl.innerText = "DoĹ‚Ä…cz teraz do transmisji na ĹĽywo";
-    btnText.innerText = "DOĹÄ„CZ TERAZ";
+    statusEl.innerHTML = '<span class="dot"></span>LIVE JUŻ TRWA';
+    infoEl.innerText = "Dołącz teraz do transmisji na żywo";
+    btnText.innerText = "DOŁĄCZ TERAZ";
     btn.onclick = () => {
       if (LIVE_CONFIG.liveUrl) window.location.href = LIVE_CONFIG.liveUrl;
-      else alert("Link LIVE nie zostaĹ‚ jeszcze ustawiony.");
+      else alert("Link LIVE nie został jeszcze ustawiony.");
     };
     return;
   }
@@ -119,21 +119,21 @@ function renderApp(LIVE_CONFIG) {
     statusEl.innerText = "ZACZYNAMY ZA 15 MIN.";
     infoEl.innerText = "";
     infoEl.classList.add("off");
-    btnText.innerText = "TRWAJÄ„ OSTATNIE PRZYGOTOWANIA";
+    btnText.innerText = "TRWAJĄ OSTATNIE PRZYGOTOWANIA";
     btn.classList.add("inactive");
     btn.onclick = () => {};
     return;
   }
 
   statusEl.innerText = "RETRANSMISJA";
-  infoEl.innerText = "ZOBACZ! zanim zniknÄ… wszystkie stylizacje";
+  infoEl.innerText = "ZOBACZ! zanim znikną wszystkie stylizacje";
   infoEl.classList.add("off");
 
   if (LIVE_CONFIG.replayUrl) {
-    btnText.innerText = "OGLÄ„DAJ POWTĂ“RKÄ";
+    btnText.innerText = "OGLĄDAJ POWTÓRKĘ";
     btn.onclick = () => { window.location.href = LIVE_CONFIG.replayUrl; };
   } else {
-    btnText.innerText = "WĹÄ„CZ POWIADOMIENIA";
+    btnText.innerText = "WŁĄCZ POWIADOMIENIA";
     btn.onclick = enablePush;
   }
 }
@@ -155,9 +155,9 @@ async function loadFreshConfig() {
       const LIVE_CONFIG = Function("return " + match[1])();
       renderApp(LIVE_CONFIG);
     } catch (error) {
-      statusEl.innerText = "BĹÄ„D KONFIGURACJI";
-      infoEl.innerText = "OdĹ›wieĹĽ aplikacjÄ™ lub sprĂłbuj ponownie za chwilÄ™.";
-      btnText.innerText = "ODĹšWIEĹ»";
+      statusEl.innerText = "BŁĄD KONFIGURACJI";
+      infoEl.innerText = "Odśwież aplikację lub spróbuj ponownie za chwilę.";
+      btnText.innerText = "ODŚWIEŻ";
       btn.onclick = () => window.location.reload();
     }
   }
@@ -180,7 +180,7 @@ function startLiveAutoRefresh(){
 async function enablePush(){
   try{
     if (!('Notification' in window) || !('serviceWorker' in navigator)) {
-      alert('To urzÄ…dzenie nie obsĹ‚uguje powiadomieĹ„ web push.');
+      alert('To urządzenie nie obsługuje powiadomień web push.');
       return;
     }
     const permission = await Notification.requestPermission();
@@ -191,11 +191,11 @@ async function enablePush(){
     const reg = await navigator.serviceWorker.register('./firebase-messaging-sw.js');
     const token = await messaging.getToken({vapidKey:vapidKey, serviceWorkerRegistration:reg});
     localStorage.setItem('fcmToken', token);
-    alert('Powiadomienia wĹ‚Ä…czone.');
+    alert('Powiadomienia włączone.');
     console.log('FCM TOKEN:', token);
   }catch(e){
     console.error(e);
-    alert('BĹ‚Ä…d konfiguracji powiadomieĹ„.');
+    alert('Błąd konfiguracji powiadomień.');
   }
 }
 
