@@ -1,0 +1,10 @@
+KOPIA ZAPASOWA PRZED POPRAWKĄ IKON PRZYCISKÓW
+
+Stan repozytorium do odtworzenia:
+commit: 792747f06e041664c4678d42dd0a6500b966917b
+opis: Restore hidden admin logo access safely
+plik główny: index.html
+service worker: firebase-messaging-sw.js
+
+Jeżeli kolejna zmiana zepsuje aplikację, należy wrócić do commitu:
+792747f06e041664c4678d42dd0a6500b966917b
