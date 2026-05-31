@@ -1,0 +1,11 @@
+KOPIA ZAPASOWA PRZED ZMIANĄ KLEPSYDRY NA ZŁOTĄ I PRZESUNIĘCIEM BLOKU NIŻEJ
+
+data: 2026-06-01
+repozytorium: dariuszflajszer-hub/LILU-LIVE-VIP
+stan bazowy przed zmianą: f35b952443b0e689c37cc200b25b7bf04facfd38
+ostatni stabilny stan do awaryjnego powrotu: 792747f06e041664c4678d42dd0a6500b966917b
+
+Zakres planowanej zmiany:
+1. Zamiana emoji klepsydry na złotą grafikę bez koloru niebieskiego.
+2. Przesunięcie klepsydry oraz napisu ZACZYNAMY ZA 15 MIN. niżej w widoku LIVE ZA 15 MINUT.
+3. Bez zmian w admin.html.
