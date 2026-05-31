@@ -1,0 +1,10 @@
+KOPIA ZAPASOWA PRZED USUNIĘCIEM PRZYCISKU ZAPROŚ PRZYJACIÓŁKĘ Z WIDOKU LIVE ZA 15 MINUT
+
+data: 2026-06-01
+repozytorium: dariuszflajszer-hub/LILU-LIVE-VIP
+stan bazowy przed zmianą: c9e33798666901591e1e886b6ad0edc81f354753
+ostatni stabilny stan do awaryjnego powrotu: 792747f06e041664c4678d42dd0a6500b966917b
+
+Zakres planowanej zmiany:
+1. Ukrycie przycisku ZAPROŚ PRZYJACIÓŁKĘ w widoku LIVE ZA 15 MINUT.
+2. Bez zmian w admin.html.
