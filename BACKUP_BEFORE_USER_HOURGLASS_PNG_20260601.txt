@@ -1,0 +1,11 @@
+KOPIA ZAPASOWA PRZED PODMIANĄ KLEPSYDRY NA PLIK UŻYTKOWNIKA
+
+data: 2026-06-01
+repozytorium: dariuszflajszer-hub/LILU-LIVE-VIP
+stan bazowy przed zmianą: a8b1ece8884ca241696106e887b4c681ae0040bd
+ostatni stabilny stan do awaryjnego powrotu: 792747f06e041664c4678d42dd0a6500b966917b
+
+Zakres planowanej zmiany:
+1. Dodanie pliku hourglass-lilu.png z grafiki przygotowanej przez użytkownika.
+2. Podmiana aktualnej klepsydry SVG na grafikę PNG użytkownika w widoku LIVE ZA 15 MINUT.
+3. Bez zmian w admin.html.
