@@ -1,0 +1,12 @@
+KOPIA ZAPASOWA PRZED PODMIANĄ MAŁEGO SERDUSZKA NA GRAFIKĘ PLAY
+
+data: 2026-06-01
+repozytorium: dariuszflajszer-hub/LILU-LIVE-VIP
+stan bazowy przed zmianą: 636c392c256b47eb1d054eb3026f612a5946ca06
+ostatni stabilny stan do awaryjnego powrotu: 792747f06e041664c4678d42dd0a6500b966917b
+
+Zakres planowanej zmiany:
+1. Dodanie pliku lk.png przygotowanego przez użytkownika.
+2. Podmiana małego cienkiego serduszka w separatorze na grafikę lk.png.
+3. Dobranie proporcji grafiki do widoku aplikacji.
+4. Bez zmian w admin.html.
