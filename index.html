@@ -34,7 +34,7 @@ h1.inviteHidden{display:none}
   <div class="bell" id="bell" aria-label="Powiadomienia">🔔</div>
   <img src="serce-logo-png.png" class="logo" alt="LILU LIVE">
   <h1 id="inviteTitle">ZAPROŚ PRZYJACIÓŁKĘ</h1>
-  <div class="divider" id="mainDivider"><span id="dividerIcon"><img src="lk.png" class="dividerGraphic" alt="Złota ikona odtwarzania"></span></div>
+  <div class="divider empty" id="mainDivider"><span id="dividerIcon"></span></div>
 
   <section class="liveBox">
     <div class="status" id="status"></div>
@@ -97,7 +97,7 @@ function renderApp(LIVE_CONFIG) {
   btn.classList.remove("inactive");
   app.classList.remove("soonView", "liveView");
   inviteTitle.classList.remove("inviteHidden");
-  setDividerIcon(`<img src="lk.png" class="dividerGraphic" alt="Złota ikona odtwarzania">`, false);
+  setDividerIcon("", false);
 
   const mode = LIVE_CONFIG.liveMode || (LIVE_CONFIG.isLive === true ? "live" : (LIVE_CONFIG.liveSoon === true ? "soon" : "replay"));
 
@@ -127,6 +127,7 @@ function renderApp(LIVE_CONFIG) {
     return;
   }
 
+  setDividerIcon(`<img src="lk.png" class="dividerGraphic" alt="Złota ikona odtwarzania">`, false);
   statusEl.innerText = "RETRANSMISJA";
   infoEl.innerText = "ZOBACZ! zanim znikną wszystkie stylizacje";
   infoEl.classList.add("off");
