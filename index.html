@@ -96,12 +96,12 @@ function renderApp(LIVE_CONFIG) {
   infoEl.classList.remove("off");
   btn.classList.remove("inactive");
   app.classList.remove("soonView", "liveView");
-  inviteTitle.classList.remove("inviteHidden");
   setDividerIcon("", false);
 
   const mode = LIVE_CONFIG.liveMode || (LIVE_CONFIG.isLive === true ? "live" : (LIVE_CONFIG.liveSoon === true ? "soon" : "replay"));
 
   if (mode === "live") {
+    inviteTitle.classList.remove("inviteHidden");
     app.classList.add("liveView");
     setDividerIcon("", false);
     statusEl.innerHTML = '<span class="dot"></span>LIVE JUŻ TRWA';
@@ -127,6 +127,7 @@ function renderApp(LIVE_CONFIG) {
     return;
   }
 
+  inviteTitle.classList.remove("inviteHidden");
   setDividerIcon(`<img src="lk.png" class="dividerGraphic" alt="Złota ikona odtwarzania">`, false);
   statusEl.innerText = "RETRANSMISJA";
   infoEl.innerText = "ZOBACZ! zanim znikną wszystkie stylizacje";
