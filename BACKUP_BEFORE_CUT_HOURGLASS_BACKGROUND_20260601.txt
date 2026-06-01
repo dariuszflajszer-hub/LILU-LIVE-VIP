@@ -1,0 +1,11 @@
+KOPIA ZAPASOWA PRZED WYCIĘCIEM TŁA Z GRAFIKI KLEPSYDRY
+
+data: 2026-06-01
+repozytorium: dariuszflajszer-hub/LILU-LIVE-VIP
+stan bazowy przed zmianą: e0699f5b964116d9420ddb72740df0590e27057f
+ostatni stabilny stan do awaryjnego powrotu: 792747f06e041664c4678d42dd0a6500b966917b
+
+Zakres planowanej zmiany:
+1. Wycięcie jasnego/różowego tła z pliku hourglass-lilu.png.
+2. Pozostawienie samej klepsydry jako PNG z przezroczystością.
+3. Bez zmian w admin.html.
